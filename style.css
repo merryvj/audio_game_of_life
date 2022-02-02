@@ -1,0 +1,23 @@
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+td {
+    border: solid 1px black;
+}
+
+table{
+    height: 100vmin;
+    width: 100vmin;
+}
+
+._0 {
+    background-color: aquamarine;
+}
+
