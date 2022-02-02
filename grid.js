@@ -1,5 +1,5 @@
 
-const cells = [
+let cells = [
 ]
 
 const gridSz = 8;
@@ -17,12 +17,18 @@ export function init() {
     }
 }
 
+export function toggleCell(row, col) {
+    cells[row][col] = -1 * cells[row][col] + 1;
+}
+
 export function draw() {
     let table = document.createElement("table");
     cells.forEach((rowArr, row) => {
         let rowEl = document.createElement("tr");
         rowArr.forEach((colVal, col) => {
           let cell = document.createElement("td");
+          cell.setAttribute("c", col);
+          cell.setAttribute("r", row);
           cell.classList.add("_" + colVal);
           rowEl.append(cell);
         });
@@ -34,7 +40,7 @@ export function draw() {
 }
 
 export function update() {
-    let newTable = []; // Upcoming grid
+    let newCells = []; // Upcoming grid
         cells.forEach((rowArr, row) => {
           let newRow = [];
           rowArr.forEach((colVal, col) => {
@@ -50,10 +56,9 @@ export function update() {
 
             newRow.push(cellVal);
           });
-          newTable.push(newRow);
+          newCells.push(newRow);
         });
-        cells = newTable; // Update the grid
-
+        cells = newCells; // Update the grid
 }
 
 function checkNeighbors(row, col) {
@@ -63,19 +68,19 @@ function checkNeighbors(row, col) {
     
     for (let i = -1; i < 2; i++) { //This checks the row above and row below
       if (col + i >= 0 && col + i < gridSz - 1) { // Check for valid column
-        if (row > 0 && grid[row - 1][col + i] == 1) {
+        if (row > 0 && cells[row - 1][col + i] == 1) {
           count++;
         }
-        if (row < gridSz - 1 && grid[row + 1][col + i] == 1) { 
+        if (row < gridSz - 1 && cells[row + 1][col + i] == 1) { 
           count++;
         }
       }
     }
     
-    if (col - 1 >= 0 && grid[row][col - 1] == 1) { // Check left cell
+    if (col - 1 >= 0 && cells[row][col - 1] == 1) { // Check left cell
       count++;
     }
-    if (col + 1 < gridSz - 1 && grid[row][col + 1] == 1) { // Check right cell
+    if (col + 1 < gridSz - 1 && cells[row][col + 1] == 1) { // Check right cell
       count++;
     }
 
