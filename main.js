@@ -1,5 +1,4 @@
 const grid = document.getElementById("grid");
-const stepBtn = document.getElementById("step-btn");
 let cells = [];
 let soundStates = [];
 const gridSz = 8;
@@ -10,6 +9,11 @@ init();
 
 function start() {
   interval = setInterval(update, 300);
+}
+
+function reset() {
+  clearInterval(interval);
+  init();
 }
 
 

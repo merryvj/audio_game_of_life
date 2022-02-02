@@ -1,5 +1,5 @@
 
-body{
+main{
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -11,6 +11,12 @@ body{
 #grid{
     background-color: black;
 }
+
+#controls {
+    display: flex;
+    flex-direction: column;
+}
+
 
 td {
     border-radius: 50%;
