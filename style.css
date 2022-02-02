@@ -8,20 +8,54 @@ body{
     margin: 0;
 }
 
+#grid{
+    background-color: black;
+}
+
 td {
-    border: solid 1px black;
+    border-radius: 50%;
+    border: solid 8px white;
 }
 
 table{
     height: 100vmin;
     width: 100vmin;
+    border-spacing: 40px;
 }
 
 ._0 {
-    background-color: aquamarine;
+    background-color: grey;
 }
 
 
 ._1 {
+    background-color: yellow;
+}
+
+._2 {
+    background-color: chartreuse;
+}
+
+._3 {
+    background-color: orange;
+}
+
+._4 {
     background-color: blue;
+}
+
+._5 {
+    background-color: red;
+}
+
+._6 {
+    background-color: purple;
+}
+
+._7 {
+    background-color: pink;
+}
+
+._8 {
+    background-color: burlywood;
 }
