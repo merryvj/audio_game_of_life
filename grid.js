@@ -2,7 +2,7 @@
 let cells = [
 ]
 
-const gridSz = 8;
+const gridSz = 16;
 
 init();
 //populate grid with 0
