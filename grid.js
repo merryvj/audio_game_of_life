@@ -16,6 +16,9 @@ export function init() {
         cells.push(row);
     }
 }
+export function getCells() {
+    return cells;
+}
 
 export function toggleCell(row, col) {
     cells[row][col] = -1 * cells[row][col] + 1;

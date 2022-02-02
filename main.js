@@ -1,5 +1,5 @@
 import {draw as drawGrid, update as updateGrid, toggleCell as cellClicked, update} from "./grid.js"
-
+import {playSounds} from "./audio";
 const grid = document.getElementById("grid");
 const stepBtn = document.getElementById("step-btn");
 
@@ -8,11 +8,13 @@ function render() {
     grid.appendChild(drawGrid());
 }
 
+
 render();
 
 stepBtn.addEventListener('click', () => {
     updateGrid();
     render();
+    playSounds();
 })
 
 grid.addEventListener('click', e => {
@@ -22,6 +24,5 @@ grid.addEventListener('click', e => {
         let col = cell.getAttribute("c");
         cellClicked(row, col);
     }
-
     render();
 })
