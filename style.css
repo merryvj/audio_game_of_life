@@ -1,6 +1,6 @@
 :root{
     --color-bg: #2e3756;
-    --color-pad-main: #3a4c6d;
+    --color-pad-main: #3a4568;
 
 }
 
@@ -9,17 +9,16 @@ body, html{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 main{
     margin: auto;
     height: 100vh;
-    width: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--color-pad-main);
     border-radius: 16px;
     box-sizing: border-box;
 }
@@ -28,25 +27,42 @@ main{
 
 }
 
+.controls-container{
+    width: 88vh;
+    display: flex;
+    justify-content: space-between;
+}
 
 .controls {
-    padding: 2vh;
+    
+}
+
+.controls > * {
+    margin-right: 1vh;
+
 }
 
 .controls > button{
     background: hsl(223, 10%, 95%);
     border: none;
     padding: 1vh;
-    margin-right: 1vh;
     border-radius: 8px;
 }
 
-.controls > button:last-of-type {
+.controls:last-child {
     margin-right: 0;
 }
 
 .controls > button:hover{
     opacity: 0.9;
+}
+
+.controls > input{
+
+}
+
+#instructions {
+    color: white;
 }
 
 

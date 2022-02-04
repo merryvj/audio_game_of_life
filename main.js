@@ -1,27 +1,45 @@
 const grid = document.getElementById("grid");
+const instructions = document.getElementById("instructions");
+// const bpmControl = document.getElementById("bpmSlider");
 let cells = [];
 let soundStates = [];
 let cellsEl = null;
 let interval;
+let isRunning = false;
 const gridSz = 8;
 
 
 init();
 
 function start() {
+  isRunning = true;
   interval = setInterval(update, 300);
+  updateInstructions("How long can you keep the beats going?");
+  
 }
 
 function reset() {
+  isRunning = false;
   clearInterval(interval);
   init();
+  updateInstructions("Set your starting notes, then hit start :)");
 }
 
+function updateInstructions(text) {
+  instructions.textContent = text;
+}
+
+function updateBPM(val) {
+  interval = setInterval(update, val);
+}
 
 function render() {
   grid.innerHTML = "";
   cellsEl = draw();
   grid.appendChild(cellsEl);
+  if (soundStates.length == 0 && isRunning) {
+    reset();
+  }
   playSounds(soundStates);
   soundStates = [];
 }
