@@ -1,3 +1,12 @@
+:root{
+    --color-bg: #2e3756;
+    --color-pad-main: #3a4c6d;
+
+}
+
+body, html{
+    background-color: var(--color-bg);
+}
 
 main{
     height: 100vh;
@@ -9,7 +18,10 @@ main{
 }
 
 #grid{
-    background-color: black;
+    background-color: var(--color-pad-main);
+    z-index: 0;
+    border-radius: 16px;
+
 }
 
 #controls {
@@ -18,50 +30,65 @@ main{
 }
 
 
-td {
-    border-radius: 50%;
-    border: solid 8px white;
-}
-
 table{
     height: 100vmin;
     width: 100vmin;
-    border-spacing: 40px;
+    border-spacing: 16px;
+    padding: 24px;
 }
 
-._0 {
-    background-color: grey;
+td {
+    position: relative;
+    background-color: rgba(104,121,163,255);
+    border-radius: 8px;
 }
+
+
+
+/* td::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform: translateY(4px);
+    border-radius: 8px;
+    background-color: indigo;
+} */
+
+
 
 
 ._1 {
-    background-color: yellow;
+    background: hsl(310, 80%, 85%);
 }
 
 ._2 {
-    background-color: chartreuse;
+    background-color: hsl(270, 80%, 85%);
 }
 
 ._3 {
-    background-color: orange;
+    background-color: hsl(230, 80%, 85%);
 }
 
 ._4 {
-    background-color: blue;
+    background-color: hsl(190, 80%, 85%);
 }
 
 ._5 {
-    background-color: red;
+    background-color: hsl(150, 80%, 85%);;
 }
 
 ._6 {
-    background-color: purple;
+    background-color: hsl(110, 80%, 85%);
 }
 
 ._7 {
-    background-color: pink;
+    background-color: hsl(70, 80%, 85%);
 }
 
 ._8 {
-    background-color: burlywood;
+    background-color: hsl(30, 80%, 85%);
 }

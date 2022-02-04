@@ -29,6 +29,7 @@ function render() {
 grid.addEventListener("click", (e) => {
   if (e.target.tagName == "TD") {
     let cell = e.target;
+    cell.classList.add("style");
     let row = cell.getAttribute("r");
     let col = cell.getAttribute("c");
     toggleCell(row, col);
