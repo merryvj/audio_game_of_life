@@ -6,42 +6,69 @@
 
 body, html{
     background-color: var(--color-bg);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 main{
+    margin: auto;
     height: 100vh;
-    width: 100vw;
+    width: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0;
+    background-color: var(--color-pad-main);
+    border-radius: 16px;
+    box-sizing: border-box;
 }
 
 #grid{
-    background-color: var(--color-pad-main);
-    z-index: 0;
-    border-radius: 16px;
 
 }
 
-#controls {
-    display: flex;
-    flex-direction: column;
+
+.controls {
+    padding: 2vh;
+}
+
+.controls > button{
+    background: hsl(223, 10%, 95%);
+    border: none;
+    padding: 1vh;
+    margin-right: 1vh;
+    border-radius: 8px;
+}
+
+.controls > button:last-of-type {
+    margin-right: 0;
+}
+
+.controls > button:hover{
+    opacity: 0.9;
 }
 
 
 table{
-    height: 100vmin;
-    width: 100vmin;
-    border-spacing: 16px;
-    padding: 24px;
+    height: 90vh;
+    width: 90vh;
+    border-spacing: 1vh;
+
 }
 
 td {
     position: relative;
-    background-color: rgba(104,121,163,255);
+    background: hsl(223, 24%, 52%);
     border-radius: 8px;
+    cursor: pointer;
+    transition: 0.1s ease;
 }
+
+td:not(.active):hover{
+    background: hsl(223, 32%, 62%);
+}
+
 
 
 
@@ -62,33 +89,33 @@ td {
 
 
 ._1 {
-    background: hsl(310, 80%, 85%);
+    background: radial-gradient(hsl(310, 25%, 85%), hsl(310, 80%, 85%));
 }
 
 ._2 {
-    background-color: hsl(270, 80%, 85%);
+    background: radial-gradient(hsl(270, 25%, 85%), hsl(270, 80%, 85%));
 }
 
 ._3 {
-    background-color: hsl(230, 80%, 85%);
+    background: radial-gradient(hsl(230, 25%, 85%), hsl(230, 80%, 85%));
 }
 
 ._4 {
-    background-color: hsl(190, 80%, 85%);
+    background: radial-gradient(hsl(190, 25%, 85%), hsl(190, 80%, 85%));
 }
 
 ._5 {
-    background-color: hsl(150, 80%, 85%);;
+    background: radial-gradient(hsl(150, 25%, 85%), hsl(150, 80%, 85%));
 }
 
 ._6 {
-    background-color: hsl(110, 80%, 85%);
+    background: radial-gradient(hsl(110, 25%, 85%), hsl(110, 80%, 85%));
 }
 
 ._7 {
-    background-color: hsl(70, 80%, 85%);
+    background: radial-gradient(hsl(70, 25%, 85%), hsl(70, 80%, 85%));
 }
 
 ._8 {
-    background-color: hsl(30, 80%, 85%);
+    background: radial-gradient(hsl(30, 25%, 85%), hsl(30, 80%, 85%));
 }

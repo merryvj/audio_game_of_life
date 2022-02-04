@@ -69,6 +69,7 @@ function draw() {
       cell.setAttribute("r", row);
       if (colVal > 0) {
         cell.classList.add("_" + (col + 1));
+        cell.classList.add("active");
         soundStates.push(col + 1);
       }
       rowEl.append(cell);
