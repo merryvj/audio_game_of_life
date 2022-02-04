@@ -1,9 +1,10 @@
 const grid = document.getElementById("grid");
 let cells = [];
 let soundStates = [];
-const gridSz = 8;
 let cellsEl = null;
 let interval;
+const gridSz = 8;
+
 
 init();
 
@@ -21,6 +22,8 @@ function render() {
   grid.innerHTML = "";
   cellsEl = draw();
   grid.appendChild(cellsEl);
+  playSounds(soundStates);
+  soundStates = [];
 }
 
 grid.addEventListener("click", (e) => {
@@ -29,9 +32,12 @@ grid.addEventListener("click", (e) => {
     let row = cell.getAttribute("r");
     let col = cell.getAttribute("c");
     toggleCell(row, col);
+    render();
   }
-  render();
+
 });
+
+
 
 //populate grid with 0
 function init() {
@@ -61,8 +67,8 @@ function draw() {
       cell.setAttribute("c", col);
       cell.setAttribute("r", row);
       if (colVal > 0) {
-        cell.classList.add("_" + col);
-        soundStates.push(col);
+        cell.classList.add("_" + (col + 1));
+        soundStates.push(col + 1);
       }
       rowEl.append(cell);
     });
@@ -97,19 +103,15 @@ function update() {
   });
   cells = newCells; // Update the grid
   render();
-  playSounds(soundStates);
-  soundStates = [];
+
 }
 
 function checkNeighbors(row, col) {
-  // Return number of live neighbors
 
   let count = 0;
 
   for (let i = -1; i < 2; i++) {
-    //This checks the row above and row below
     if (col + i >= 0 && col + i < gridSz - 1) {
-      // Check for valid column
       if (row > 0 && cells[row - 1][col + i] == 1) {
         count++;
       }
@@ -120,11 +122,9 @@ function checkNeighbors(row, col) {
   }
 
   if (col - 1 >= 0 && cells[row][col - 1] == 1) {
-    // Check left cell
     count++;
   }
   if (col + 1 < gridSz - 1 && cells[row][col + 1] == 1) {
-    // Check right cell
     count++;
   }
 
